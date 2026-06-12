@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventHub - Danh sách Khóa học</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">EventHub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="courses.html">Sự kiện/Khóa học</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html">Đăng ký</a></li>
+                    <li class="nav-item"><a class="nav-link" href="registrations.html">Đã đăng ký</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <h2 class="mb-4">Danh sách Sự kiện & Khóa học</h2>
+        <div class="row mb-4 bg-light p-3 rounded">
+            <div class="col-md-4 mb-2">
+                <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm theo tên...">
+            </div>
+            <div class="col-md-3 mb-2">
+                <select id="categoryFilter" class="form-select">
+                    <option value="">Tất cả danh mục</option>
+                    <option value="Frontend">Frontend</option>
+                    <option value="Backend">Backend</option>
+                    <option value="Design">Design</option>
+                    <option value="Data">Data</option>
+                </select>
+            </div>
+            <div class="col-md-3 mb-2">
+                <select id="levelFilter" class="form-select">
+                    <option value="">Tất cả cấp độ</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                </select>
+            </div>
+            <div class="col-md-2 mb-2">
+                <button class="btn btn-secondary w-100" onclick="resetFilters()">Reset</button>
+            </div>
+        </div>
+        
+        <div class="row" id="courseGrid">
+            </div>
+    </main>
+
+    <div class="modal fade" id="courseDetailModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Tên khóa học</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img src="" id="modalImage" class="img-fluid rounded" alt="Course Image">
+                        </div>
+                        <div class="col-md-7">
+                            <p><span class="badge bg-primary" id="modalCategory"></span> <span class="badge bg-secondary" id="modalLevel"></span></p>
+                            <p><strong>Ngày tổ chức:</strong> <span id="modalDate"></span></p>
+                            <p><strong>Mô tả:</strong> <span id="modalDesc"></span></p>
+                            <hr>
+                            <p id="modalDetail"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" id="btnModalRegister">Đăng ký ngay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
