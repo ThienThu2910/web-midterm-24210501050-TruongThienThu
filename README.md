@@ -1,9 +1,9 @@
 # EventHub - Website đăng ký sự kiện mini
 
 ## 1. Thông tin sinh viên
-* **Họ tên:** [Nhập họ tên của bạn]
-* **MSSV:** [Nhập mã số sinh viên]
-* **Lớp:** [Nhập tên lớp của bạn]
+* **Họ tên:** Trương Thiện Thư
+* **MSSV:** 24210501050
+* **Lớp:** 242101TH001
 
 ## 2. Mô tả dự án
 [cite_start]Website giới thiệu danh sách sự kiện/khóa học, cho phép người dùng xem chi tiết, tìm kiếm, lọc và đăng ký tham gia[cite: 334, 335].
@@ -20,7 +20,7 @@
 * [cite_start]Lưu và xóa danh sách đăng ký bằng LocalStorage[cite: 344].
 
 ## 5. Link demo
-* **GitHub Pages:** [Link web GitHub Pages của bạn]
+* **GitHub Pages:** https://thienthu2910.github.io/web-midterm-24210501050-TruongThienThu/
 
 ## 6. Ảnh giao diện
 ![Giao diện trang chủ](./assets/images/banner.jpg)
