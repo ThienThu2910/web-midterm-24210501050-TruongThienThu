@@ -1,6 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- TRANG DANH SÁCH KHÓA HỌC (courses.html) ---
+    
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const currentTheme = localStorage.getItem('theme');
+
+    if (currentTheme === 'dark') {
+        document.body.classList.add('dark-theme');
+        if (themeToggleBtn) themeToggleBtn.innerText = '☀️ Sáng';
+    }
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            let theme = 'light';
+            
+            if (document.body.classList.contains('dark-theme')) {
+                theme = 'dark';
+                themeToggleBtn.innerText = '☀️ Sáng';
+            } else {
+                themeToggleBtn.innerText = '🌙 Tối';
+            }
+            
+            localStorage.setItem('theme', theme);
+        });
+    }
+
+    
     const courseGrid = document.getElementById('courseGrid');
     if (courseGrid) {
         renderCourses(courses);
@@ -16,12 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- TRANG ĐĂNG KÝ (register.html) ---
+    
     const registerForm = document.getElementById('registerForm');
     if (registerForm) {
         populateCourseSelect();
-
-        // Lấy courseId từ URL nếu người dùng bấm từ trang danh sách sang
         const urlParams = new URLSearchParams(window.location.search);
         const courseId = urlParams.get('courseId');
         if (courseId) {
@@ -31,16 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
         registerForm.addEventListener('submit', handleRegistration);
     }
 
-    // --- TRANG ĐÃ ĐĂNG KÝ (registrations.html) ---
     const tableBody = document.getElementById('registrationTableBody');
     if (tableBody) {
         renderRegistrations();
     }
 });
-
-// ==========================================
-// CÁC HÀM XỬ LÝ CHUNG
-// ==========================================
 
 function renderCourses(data) {
     const grid = document.getElementById('courseGrid');
