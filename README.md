@@ -24,4 +24,4 @@
 * **GitHub Repo:** * https://github.com/ThienThu2910/web-midterm-24210501050-TruongThienThu
 
 ## 6. Ảnh giao diện
-![Giao diện trang chủ](./assets/images/banner.jpg)
+![Giao diện trang chủ](assets/images/Home.png)
